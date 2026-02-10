@@ -13,4 +13,4 @@ RUN ./venv/bin/pip install -r requirements.txt
 RUN pwd
 
 EXPOSE 6969
-CMD [ "sh", "-c", "./venv/bin/python hello.py" ]
+CMD [ "sh", "-c", "./venv/bin/python -m flask --app hello run --host=0.0.0.0 --port=6969" ]
