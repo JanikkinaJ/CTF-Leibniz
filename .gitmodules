@@ -1,0 +1,3 @@
+[submodule "blog_flask"]
+	path = blog_flask
+	url = https://github.com/bgtti/blog_flask.git
