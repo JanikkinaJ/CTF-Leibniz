@@ -13,4 +13,4 @@ RUN ./venv/bin/pip install -r requirements.txt
 RUN pwd
 
 EXPOSE 5000
-CMD [ "bash -c", "./venv/bin/python -m flask --app hello run" ]
+CMD [ "sh", "-c", "./venv/bin/python -m flask --app hello run" ]
