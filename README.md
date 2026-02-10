@@ -15,6 +15,6 @@ docker build -t <nameofimage> .
 ```
 ### run container
 ```bash
-docker run <nameofimage>
+docker run -p 6969:6969 <nameofimage>
 ```
 
