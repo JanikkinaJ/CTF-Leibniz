@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Modern Web Security - TechThoughts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TechThoughts</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="post">
+            <h2>Understanding Modern Web Security</h2>
+            <p class="meta">Posted on January 15, 2026 by Alex Chen</p>
+            
+            <p>Web security has become increasingly important in today's digital landscape. As developers, we need to be aware of common vulnerabilities like SQL injection, XSS, and CSRF attacks.</p>
+            
+            <h3>Common Security Vulnerabilities</h3>
+            <p>Let's explore some of the most common security issues that plague web applications:</p>
+            
+            <p><strong>SQL Injection:</strong> This occurs when user input is directly concatenated into SQL queries without proper sanitization. Always use parameterized queries or prepared statements.</p>
+            
+            <p><strong>Cross-Site Scripting (XSS):</strong> Attackers inject malicious scripts into web pages viewed by other users. Always escape user input before rendering it in HTML.</p>
+            
+            <p><strong>Cross-Site Request Forgery (CSRF):</strong> Unauthorized commands are transmitted from a user that the web application trusts. Implement CSRF tokens in your forms.</p>
+            
+            <h3>Best Practices</h3>
+            <p>Here are some fundamental security practices every developer should follow:</p>
+            
+            <p>1. Never trust user input - validate and sanitize everything</p>
+            <p>2. Use HTTPS everywhere to encrypt data in transit</p>
+            <p>3. Implement proper authentication and authorization</p>
+            <p>4. Keep your dependencies up to date</p>
+            <p>5. Use security headers like Content-Security-Policy</p>
+            
+            <h3>Conclusion</h3>
+            <p>Security should be a priority from the start of any project, not an afterthought. By following these best practices and staying informed about new vulnerabilities, you can build more secure applications.</p>
+            
+            <p>What security practices do you follow in your projects? Feel free to share in the comments below!</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TechThoughts. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

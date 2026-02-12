@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Scalable APIs with Node.js - TechThoughts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TechThoughts</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="post">
+            <h2>Building Scalable APIs with Node.js</h2>
+            <p class="meta">Posted on January 8, 2026 by Alex Chen</p>
+            
+            <p>Node.js has revolutionized backend development with its non-blocking I/O model. In this article, we'll explore best practices for building RESTful APIs that can handle thousands of concurrent requests.</p>
+            
+            <h3>Why Node.js for APIs?</h3>
+            <p>Node.js is particularly well-suited for building APIs because of its event-driven architecture and ability to handle many concurrent connections efficiently. This makes it ideal for real-time applications and microservices.</p>
+            
+            <h3>Key Principles</h3>
+            <p><strong>Use Express.js or Fastify:</strong> These frameworks provide a solid foundation with routing, middleware support, and a large ecosystem of plugins.</p>
+            
+            <p><strong>Implement Rate Limiting:</strong> Protect your API from abuse by implementing rate limiting. Libraries like express-rate-limit make this easy.</p>
+            
+            <p><strong>Proper Error Handling:</strong> Always handle errors gracefully and return appropriate HTTP status codes. Don't expose internal error details to clients.</p>
+            
+            <p><strong>Authentication & Authorization:</strong> Use JWT tokens or OAuth for authentication. Never store passwords in plain text.</p>
+            
+            <h3>Performance Tips</h3>
+            <p>Use caching strategies with Redis to reduce database load. Implement pagination for large datasets. Use compression middleware to reduce response sizes.</p>
+            
+            <p>Monitor your API with tools like PM2 or New Relic to identify bottlenecks and optimize performance.</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TechThoughts. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
