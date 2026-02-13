@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - TechThoughts</title>
+    <title>Admin Login - TechThoughts</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -20,23 +20,26 @@
     </header>
 
     <main class="container">
-      <article class="post">
-        <h2>Contact Us</h2>
-        <p>Have a question or suggestion? Feel free to reach out!</p>
+      <div class="login-form">
+        <form action="/admin.html" method="POST">
+          <h2>Admin Login</h2>
 
-        <form action="/submit-contact.html" method="POST">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
+          <button type="submit">Login</button>
         </form>
-      </article>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% else %}
+        {% endif %}
+
+        <!-- TODO: Remove this before production -->
+        <!-- Default credentials: admin / SecureP@ss2026 -->
+      </div>
     </main>
 
     <footer>
