@@ -1,11 +1,12 @@
 from app import create_app, db
-from app.models import User, Post
+from app.models import User, Post, Comment
 
 app = create_app() 
 
 # app context important
 with app.app_context():
     # create db
+    db.drop_all()
     db.create_all()
     print("created database!")
 

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, session
-from .models import User, Post
+from .models import User, Post, Comment
 from . import db
 
 main = Blueprint("main", __name__)
@@ -8,6 +8,12 @@ main = Blueprint("main", __name__)
 def index():
     posts = Post.query.order_by(Post.created_at.desc()).all()
     return render_template("index.html", posts=posts)
+
+#post detail
+@main.route("/post/<int:post_id>")
+def post_detail(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template("post_detail.html", post=post)
 
 @main.route("/login", methods=["GET", "POST"])
 def login():
@@ -105,6 +111,48 @@ def dashboard():
     if "user_id" not in session:
         return redirect("/login")
     return f"Welcome, {session['role']} user!"
+
+
+
+
+# Comments
+@main.route("/post/<int:post_id>/comment", methods=["POST"])
+def add_comment(post_id):
+    if "user_id" not in session:
+        return redirect("/login")
+
+    post = Post.query.get_or_404(post_id)
+    content = request.form.get("content")
+
+    if not content:
+        return redirect(f"/post/{post_id}")
+    
+    new_comment = Comment(
+        content=content,
+        user_id=session["user_id"],
+        post_id=post.id
+    )
+
+    db.session.add(new_comment)
+    db.session.commit()
+    return redirect(f"/post/{post_id}")
+
+# delete
+@main.route("/comment/<int:comment_id>/delete", methods=["POST"])
+def delete_comment(comment_id):
+    if "user_id" not in session:
+        return redirect("/login")
+
+    comment = Comment.query.get_or_404(comment_id)
+    if session.get("user_id") != comment.user_id and session.get("role") != "admin":
+        return redirect("/")
+
+    post_id = comment.post_id
+    db.session.delete(comment)
+    db.session.commit()
+
+    return redirect(f"/post/{post_id}")
+
 
 #other routes
 @main.route("/about")
