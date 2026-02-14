@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <title>Edit Post - TechThoughts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Edit Post</h1>
+
+  {% if error %}
+    <p style="color:red">{{ error }}</p>
+  {% endif %}
+
+  <form method="POST">
+    <label>Title:</label><br>
+    <input type="text" name="title" value="{{ post.title }}"><br><br>
+
+    <label>Content:</label><br>
+    <textarea name="content" rows="10" cols="50">{{ post.content }}</textarea><br><br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>
