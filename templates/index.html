@@ -20,57 +20,19 @@
     </header>
 
     <main class="container">
-      <article class="post">
-        <h2>Database Design Patterns for Success</h2>
-        <p class="meta">Posted on December 28, 2025 by Alex Chen</p>
+      {% for post in posts %}
+    <article class="post">
+      <h2>{{ post.title }}</h2>
+      <p class="meta">
+        Posted on {{ post.created_at.strftime('%B %d, %Y') }}
+        by {{ post.author.username }}
+      </p>
 
-        <p>
-          Choosing the right database architecture can make or break your
-          application. Whether you're using SQL or NoSQL, understanding
-          fundamental design patterns is crucial.
-        </p>
-
-        <h3>SQL vs NoSQL</h3>
-        <p>
-          The choice between SQL and NoSQL depends on your specific use case.
-          SQL databases excel at complex queries and transactions, while NoSQL
-          databases offer flexibility and horizontal scaling.
-        </p>
-
-        <h3>Normalization</h3>
-        <p>
-          Database normalization reduces data redundancy and improves data
-          integrity. Follow these normal forms:
-        </p>
-
-        <p>First Normal Form (1NF): Eliminate repeating groups</p>
-        <p>Second Normal Form (2NF): Remove partial dependencies</p>
-        <p>Third Normal Form (3NF): Remove transitive dependencies</p>
-
-        <h3>Indexing Strategies</h3>
-        <p>
-          Proper indexing can dramatically improve query performance. Index
-          columns that are frequently used in WHERE clauses, JOIN operations,
-          and ORDER BY statements.
-        </p>
-
-        <p>
-          However, don't over-index - each index requires storage space and
-          slows down write operations.
-        </p>
-
-        <h3>Backup and Recovery</h3>
-        <p>
-          Always implement a robust backup strategy. Use automated daily backups
-          with point-in-time recovery capabilities. Test your disaster recovery
-          plan regularly.
-        </p>
-
-        <p>
-          Consider using database replicas for high availability and read
-          scaling.
-        </p>
-      </article>
+      <p>
+        {{ post.content }}
+      </p>
+    </article>
+  {% endfor %}
     </main>
 
     <footer>

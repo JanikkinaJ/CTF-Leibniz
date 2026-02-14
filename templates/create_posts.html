@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <title>Create Post - TechThoughts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Create New Post</h1>
+
+  {% if error %}
+    <p style="color:red">{{ error }}</p>
+  {% endif %}
+
+  <form method="POST">
+    <label>Title:</label><br>
+    <input type="text" name="title"><br><br>
+
+    <label>Content:</label><br>
+    <textarea name="content" rows="10" cols="50"></textarea><br><br>
+
+    <button type="submit">Create Post</button>
+  </form>
+</body>
+</html>
